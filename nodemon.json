@@ -1,0 +1,11 @@
+// 20191115002926
+// https://raw.githubusercontent.com/zeit/next.js/canary/examples/with-ts-node/nodemon.json
+
+{
+  "watch": [
+    "server/**/*.ts"
+  ],
+  "execMap": {
+    "ts": "ts-node --typeCheck --compilerOptions '{\"module\":\"commonjs\"}'"
+  }
+}
