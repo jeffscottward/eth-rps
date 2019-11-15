@@ -1,17 +1,17 @@
 //css-tricks.com/model-based-testing-in-react-with-state-machines/
 
 https: import React from "react";
-import Feedback from "./App";
+import RPS from "./pages/index";
 import { Machine } from "xstate";
 import { render, fireEvent, cleanup } from "@testing-library/react";
 import { assert } from "chai";
 import { createModel } from "@xstate/test";
 
-describe("feedback app", () => {
-  const feedbackMachine = Machine({
+describe("RPS app", () => {
+  const RPSMachine = Machine({
     /* ... */
   });
-  const testModel = createModel(feedbackMachine).withEvents({
+  const testModel = createModel(RPSMachine).withEvents({
     /* ... */
   });
 
@@ -21,7 +21,7 @@ describe("feedback app", () => {
       afterEach(cleanup);
       plan.paths.forEach(path => {
         it(path.description, () => {
-          const rendered = render(<Feedback />);
+          const rendered = render(<RPS />);
           return path.test(rendered);
         });
       });
